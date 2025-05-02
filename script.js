@@ -26,9 +26,11 @@ async function getWeather(city) {
     const icon = document.getElementById('weather-icon');
     if (data.description.includes("rain")) {
       icon.src = "https://img.icons8.com/ios/100/000000/rain.png";
-    } else if (data.description.includes("sun") || data.description.includes("clear")) {
+    }
+    else if (data.description.includes("sun") || data.description.includes("clear")) {
       icon.src = "https://img.icons8.com/ios/100/000000/sun.png";
-    } else {
+    }
+     else {
       icon.src = "https://img.icons8.com/ios/100/000000/cloud.png";
     }
   
@@ -41,13 +43,16 @@ async function getWeather(city) {
     const temp = parseInt(tempString);
   
     if (temp <= 15) {
-      document.body.style.backgroundColor = "lightblue"; // Cold
-    } else if (temp <= 25) {
-      document.body.style.backgroundColor = "lightyellow"; // Warm
-    } else {
-      document.body.style.backgroundColor = "lightcoral"; // Hot
+      document.body.style.backgroundColor = "lightblue";
+    }
+    else if (temp <= 25) {
+      document.body.style.backgroundColor = "lightyellow";
+    }
+    else {
+      document.body.style.backgroundColor = "lightcoral";
     }
   }
+  
   document.getElementById('search-btn').addEventListener('click', () => {
     const city = document.getElementById('city-input').value.trim();
     if (city) {
